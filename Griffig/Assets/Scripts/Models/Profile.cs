@@ -1,4 +1,6 @@
-﻿/// <summary>
+﻿using System;
+
+/// <summary>
 /// Profile of a <see cref="Player"/>.
 /// This represents more like an "account" and not a
 /// game participant.
@@ -11,6 +13,11 @@ internal class Profile
   /// Name of the profile.
   /// </summary>
   public string Name { get; set; }
+
+  /// <summary>
+  /// 'Unique' profile id.
+  /// </summary>
+  private Guid _id;
 
   #endregion Properties
 }
