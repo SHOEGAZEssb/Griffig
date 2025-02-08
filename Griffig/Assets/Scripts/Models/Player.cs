@@ -1,4 +1,4 @@
-using Assets.Scripts.Models;
+using Assets.Scripts.Models.Profile;
 using System;
 
 /// <summary>
@@ -17,7 +17,7 @@ public class Player
   /// Indicates if this is the player of this device.
   /// </summary>
   public bool IsLocal => ProfileManager.Instance.Profile.ID == _profileID;
-  private string _profileID;
+  private readonly string _profileID;
 
   /// <summary>
   /// Current score of the player.
