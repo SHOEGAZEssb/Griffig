@@ -19,6 +19,8 @@ public class Player
   public bool IsLocal => ProfileManager.Instance.Profile.ID == _profileID;
   private readonly string _profileID;
 
+  public bool IsHost => throw new NotImplementedException();
+
   /// <summary>
   /// Current score of the player.
   /// </summary>

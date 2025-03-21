@@ -1,4 +1,4 @@
-using Assets.Scripts.Models;
+using Assets.Scripts.Models.Profile;
 using UnityEngine;
 
 /// <summary>
