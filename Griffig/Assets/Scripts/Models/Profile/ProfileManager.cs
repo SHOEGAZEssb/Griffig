@@ -2,7 +2,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace Assets.Scripts.Models
+namespace Assets.Scripts.Models.Profile
 {
   /// <summary>
   /// Manager for saving / loading the local player profile.
