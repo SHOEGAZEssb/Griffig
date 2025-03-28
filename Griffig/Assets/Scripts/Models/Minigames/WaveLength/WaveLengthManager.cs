@@ -11,6 +11,7 @@ namespace Assets.Scripts.Models.Minigames.WaveLength
     private readonly IDictionary<Player, PlayerRole> _players;
     private readonly IEnumerable<WaveLength> _gameInstances;
     private readonly WaveLength _hostInstance;
+    private List<Player> _confirmedPlayers = new List<Player>();
 
     public WaveLengthManager(IEnumerable<Player> players)
     {
@@ -32,7 +33,16 @@ namespace Assets.Scripts.Models.Minigames.WaveLength
 
     private void GameInstance_CurrentPhaseConfirmed(object sender, PlayerConfirmEventArgs e)
     {
-      throw new NotImplementedException();
+      if (!_confirmedPlayers.Contains(e.Player))
+        _confirmedPlayers.Add(e.Player);
+
+      if (_confirmedPlayers.Count == _players.Count)
+      {
+        foreach (var instance in _gameInstances)
+          instance.NextPhase();
+
+        _confirmedPlayers = new List<Player>();
+      }
     }
 
     private static IDictionary<Player, PlayerRole> AssignPlayerRoles(IEnumerable<Player> players)
